@@ -1,6 +1,8 @@
 [Next.js](https://nextjs.org)  DEISI Shop
 
 [Vercel](https://store-example-pvzg.vercel.app/deisi/shop)
+[store-example-pvzg.vercel.app/deisi/shop](https://store-example-pvzg.vercel.app/deisi/shop)
+
 
 ## Getting Started
 
