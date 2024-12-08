@@ -66,6 +66,19 @@ export default function CartComponent(props: CartProps) {
     }
 
     return <div className="mt-2">
+        <Dialog open={open} onOpenChange={setOpen}>
+            <DialogContent>
+                <DialogHeader>
+                    <DialogTitle>Compra Realizada com Sucesso</DialogTitle>
+                </DialogHeader>
+                <div>
+                    <p>{response?.message}</p>
+                    <p>Pagamento: {response?.reference}</p>
+                    <p>Total com descontos: {parseInt(response?.totalCost || "0").toFixed(2)}$</p>
+                </div>
+            </DialogContent>
+        </Dialog>
+
         <Card className="h-100">
             <CardHeader>
                 <CardTitle>Cesto Resumo</CardTitle>
@@ -98,7 +111,6 @@ export default function CartComponent(props: CartProps) {
                     </div>
                 </CardContent>
                 <CardFooter >
-
                     <div className="flex flex-wrap align-center justify-center w-full ">
                         <Input className="w-100 mr-5" value={coupom} onChange={
                             (e) => {
@@ -108,23 +120,8 @@ export default function CartComponent(props: CartProps) {
 
                         {props.cart.length > 0 && <Button size="lg" onClick={buy}>Comprar</Button>}
                     </div>
-
-                    <Dialog open={open} onOpenChange={setOpen}>
-                        <DialogContent>
-                            <DialogHeader>
-                                <DialogTitle>Compra Realizada com Sucesso</DialogTitle>
-                            </DialogHeader>
-                            <div>
-                                <p>{response?.message}</p>
-                                <p>Pagamento: {response?.reference}</p>
-                                <p>Total com descontos: {parseInt(response?.totalCost || "0").toFixed(2)}$</p>
-                            </div>
-                        </DialogContent>
-                    </Dialog>
                 </CardFooter>
             </>}
-
-
         </Card>
     </div>
 }
