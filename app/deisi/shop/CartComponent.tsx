@@ -34,7 +34,6 @@ export default function CartComponent(props: CartProps) {
     const [response, setResponse] = useState<BuyResponse>()
 
     const [coupom, setCoupom] = useState("")
-    const [isStudent, setIsStudent] = useState(false)
 
     const [open, setOpen] = useState(false);
 
@@ -44,7 +43,7 @@ export default function CartComponent(props: CartProps) {
             body: JSON.stringify({
                 products: props.cart.map(product => product.id),
                 name: "",
-                student: isStudent,
+                student: false,
                 coupon: coupom
             } as BuyRequest),
             headers: {
@@ -59,7 +58,7 @@ export default function CartComponent(props: CartProps) {
             setResponse(response as BuyResponse)
             setOpen(true)
             props.clearCart()
-        }).catch((error) => {
+        }).catch(() => {
             toast({
                 description: "Erro ao comprar, tente novamente mais tarde",
             })
