@@ -19,27 +19,20 @@ export function AppSidebar() {
         <Sidebar>
             <SidebarHeader />
             <SidebarContent>
-                <SidebarGroupLabel>Stores</SidebarGroupLabel>
+                <SidebarGroupLabel>Welcome!</SidebarGroupLabel>
 
                 <SidebarMenuButton asChild>
-                    <a href="/deisi/shop">
+                    <a href="/deisi/games">
                         <Store />
-                        <span>DEISI Shop</span>
+                        <span>Games Library</span>
                     </a>
                 </SidebarMenuButton>
 
                 <SidebarMenuSub>
                     <SidebarMenuSubItem>
                         <SidebarMenuSubButton asChild>
-                            <a href="/deisi/shop#products">
-                                <span>Produtos</span>
-                            </a>
-                        </SidebarMenuSubButton>
-                    </SidebarMenuSubItem>
-                    <SidebarMenuSubItem>
-                        <SidebarMenuSubButton asChild>
-                            <a href="/deisi/shop#cart">
-                                <span>Cesto</span>
+                            <a href="/deisi/games">
+                                <span>Games</span>
                             </a>
                         </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
