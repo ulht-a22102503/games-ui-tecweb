@@ -5,22 +5,20 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { Product } from "@/models/product"
+import { Game } from "@/models/product"
 
 interface ProductItemProps {
-    product: Product // TODO
+    game: Game 
 }
 
 export default function GameItemComponent(props: ProductItemProps) {
     return (
         <Card className="h-100 relative">
             <CardHeader>
-                <CardTitle>{props.product.title}</CardTitle>
-                <CardDescription className="min-h-[110px]">{props.product.description}</CardDescription>
+                <CardTitle>{props.game.title}</CardTitle>
+                <CardDescription className="min-h-[110px]">{props.game.description}</CardDescription>
             </CardHeader>
-            <CardContent className="flex justify-center align-center">
-                <img className="h-2/5 w-2/5 rounded-md border-2	p-5" src={props.product.image}></img>
-            </CardContent>
+            
         </Card>
     )
 }
