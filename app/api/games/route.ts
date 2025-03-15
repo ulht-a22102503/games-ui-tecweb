@@ -1,4 +1,4 @@
-export async function GET(req: Request) {
+export async function GET() {
     const resp = await fetch(`${process.env.API_URL}/games`, {
         method: "GET",
     })
